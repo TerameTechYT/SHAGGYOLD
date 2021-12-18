@@ -26,12 +26,12 @@ class StoryMenuState extends MusicBeatState
 	];
 	var curDifficulty:Int = 2;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, false, false];
 
 	var weekCharacters:Array<Dynamic> = [
 		['dad', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
-		['dad', 'bf', 'gf']
+		['noone', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [

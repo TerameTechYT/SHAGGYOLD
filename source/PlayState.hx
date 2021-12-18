@@ -154,7 +154,7 @@ class PlayState extends MusicBeatState
 	var godMoveGf:Bool = false;
 	var godMoveSh:Bool = false;
 
-
+	
 	public static var campaignScore:Int = 0;
 
 	var defaultCamZoom:Float = 1.05;
@@ -218,7 +218,7 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(SONG.bpm);
 
 		mania = SONG.mania;
-
+		
 		switch (SONG.song.toLowerCase())
 		{
 			case 'tutorial':
@@ -229,32 +229,28 @@ class PlayState extends MusicBeatState
 					"Hey you guys",
 					"I'm looking for a dog that got lost\nin this mansion",
 					"His name is scooby, have you like seen him\nor anything?",
-					"Sadly, I haven't, meow.",
-					"But, maybe we can look together, woof!",
-					"Before that, though... Wanna sing, meow?",
+					"beep bap boop", //na man, haven't seen any dog. Hey are u good at singing? we came here for a battle.
 					"You wanna like, sing?\nBut I haven't found scoobs yet",
-					"I will be able to find him in no time!",
-					"But first, I wanna see what you got!",
-					"He'll probably be fine, meow.",
+					"bop bee bap", //This house is a mess, there ain't nothing u can do but sing! I hope yo dog isn't fuckin dead tho
 					"I sure hope so too...",
 					"Alright, just a couple of songs though, I\ndon't know that many"
 				];
 				//the sprites to go along with text (n for no change)
 				dface = [
 						"f_sh_ser", "n", "n",
-						"f_bf", "n", "n",
+						"f_bf",
 						"f_sh_con",
-						"f_bf", "n", "n",
+						"f_bf",
 						"f_sh_ser",
 						"f_sh_smug"
 						];
 				//the sides of the faces (1=left, -1=right and flipped)
-				dside = [1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, 1];
+				dside = [1, 1, 1, -1, 1, -1, 1, 1];
 			case 'eruption':
 				dialogue = [
 					"Zoinks! I lost control for a second...",
 					"I'm sorry man, don't wanna make it\nunfair for you or anything.",
-					"Hey, I can handle anything you throw\nat me, meow! Let's keep going!",
+					"beep boop", //adequate sentiment bitch. uh i mean let's keep singing bro!!
 					"Okay, like, get ready now and stuff"
 				];
 				dface = [
@@ -268,7 +264,7 @@ class PlayState extends MusicBeatState
 				dialogue = [
 					"You're like, actually good and stuff",
 					"I don't wanna like bore you, so I'll\nsing faster this time",
-					"I've dealt with things harder, meow!\nShow me something interesting!",
+					"beep boop boop bap bee", //yeah like that's gonna make it harder for me. ur too easy man! come up with something... not boring!
 					"...",
 					"Alright, alright...\nHere we go man!",
 				];
@@ -283,10 +279,10 @@ class PlayState extends MusicBeatState
 			case 'whats-new':
 				dialogue = [
 					"You haven't seen scoob around?",
-					"I haven't... Yet.",
+					"bap boop",
 					"Oh gosh! I haven't like, found him either!\nHe must be so scared...",
-					"This place is surprisingly big, meow.",
-					"Yeah, it's like, super weird.",
+					"boop bap",
+					"Huh? sing again?", //Did I fuckin stutter? Bring it on bitch, I'm tired of your shit. I didn't even care for your dog.
 					"You know, maybe singing Scooby's\nfavorite song might call his attention\nand stuff",
 					"If he can hear us...",
 					"Alright, here we go."
@@ -309,32 +305,29 @@ class PlayState extends MusicBeatState
 					"...",
 					"Scooby's my closest friend y'know",
 					"We've been together for the last 70 years!",
-					"Wh-",
 					"I stopped my aging when I was like 17.",
 					"I didn't do the same to my friends because it\nwould be selfish for me to not let them\nrest and stuff...",
 					"But zoinks! Scooby was so insistent.\nhe told me he'd never regret his decision if\nit meant to spend eternity side by side.",
 					"Now he's the only one I have left...",
-					"Um...",
+					"beep bee bap!",
 					"...",
 					"I'm uh.. gonna make some noise."
 				];
 				dface = [
 						"f_sh", "f_sh_ser",
 						"f_bf",
-						"f_sh_ser", "f_sh",
-						"f_bf_a",
-						"f_sh_ser", "f_sh_con", "f_sh_pens", "f_sh_sad",
+						"f_sh_ser", "f_sh", "f_sh_ser", "f_sh_con", "f_sh_pens", "f_sh_sad",
 						"f_bf",
 						"f_sh_ang", "f_sh_smug"
 						];
-				dside = [1, 1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1];
+				dside = [1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, 1];
 			case 'super-saiyan':
 				dialogue = [
-					"(Hmm... I kinda wanna see him go harder...)",
-					"Hey!",
-					"You kinda suck, meow!",
+					"beep boo baa", 
+					"bap bee beep boop bee", 
+					"bap bap bee pop", 
 					"That's like, really rude man...\nI really-",
-					"No wonder your dog got lost. :3",
+					"bee boop",
 					"...",
 					"Heh.",
 					"Prick."
@@ -347,7 +340,7 @@ class PlayState extends MusicBeatState
 						];
 				dside = [-1, -1, -1, 1, -1, 1, 1, 1, 1];
 			case 'dadbattle':
-
+				
 			case 'garden-havoc':
 		}
 
@@ -618,7 +611,7 @@ class PlayState extends MusicBeatState
 			bg.scale.set(6, 6);
 			add(bg);
 
-			/*
+			/* 
 				var bg:FlxSprite = new FlxSprite(posX, posY).loadGraphic(Paths.image('weeb/evilSchoolBG'));
 				bg.scale.set(6, 6);
 				// bg.setGraphicSize(Std.int(bg.width * 6));
@@ -640,7 +633,7 @@ class PlayState extends MusicBeatState
 			// bg.shader = wiggleShit.shader;
 			// fg.shader = wiggleShit.shader;
 
-			/*
+			/* 
 				var waveSprite = new FlxEffectSprite(bg, [waveEffectBG]);
 				var waveSpriteFG = new FlxEffectSprite(fg, [waveEffectFG]);
 
@@ -856,7 +849,7 @@ class PlayState extends MusicBeatState
 		}
 
 
-
+		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
 		// REPOSITIONING PER STAGE
@@ -938,7 +931,7 @@ class PlayState extends MusicBeatState
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
-
+		
 		if (FlxG.save.data.downscroll)
 			strumLine.y = FlxG.height - 165;
 
@@ -1094,7 +1087,7 @@ class PlayState extends MusicBeatState
 			}
 
 			switch (cs)
-			{
+			{		
 				case 'god-eater':
 					godCutEnd = true;
 					godMoveGf = true;
@@ -1200,7 +1193,7 @@ class PlayState extends MusicBeatState
 			{
 				new FlxTimer().start(0.03, function(ap_dp:FlxTimer)
 				{
-
+					
 					if (tb_appear == 1)
 					{
 						if (tbox.alpha < 1)
@@ -1537,7 +1530,7 @@ class PlayState extends MusicBeatState
 						add(noticeB[i]);
 					}
 
-
+					
 				}
 				else
 				{
@@ -2012,7 +2005,7 @@ class PlayState extends MusicBeatState
 							});
 						});
 					});
-				});
+				});	
 			});
 		});
 		new FlxTimer().start(0.001, function(shk:FlxTimer)
@@ -2462,7 +2455,7 @@ class PlayState extends MusicBeatState
 		if (generatedMusic)
 			{
 				notes.forEachAlive(function(daNote:Note)
-				{
+				{	
 					if (daNote.y > FlxG.height)
 					{
 						daNote.active = false;
@@ -2473,20 +2466,20 @@ class PlayState extends MusicBeatState
 						daNote.visible = true;
 						daNote.active = true;
 					}
-
+	
 					if (!daNote.mustPress && daNote.wasGoodHit)
 					{
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
-
+	
 						var altAnim:String = "";
-
+	
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
 								altAnim = '-alt';
 						}
-
+						
 						if (mania == 0)
 						{
 							switch (Math.abs(daNote.noteData))
@@ -2543,17 +2536,17 @@ class PlayState extends MusicBeatState
 									dad.playAnim('singRIGHT' + altAnim, true);
 							}
 						}
-
+	
 						dad.holdTimer = 0;
-
+	
 						if (SONG.needsVoices)
 							vocals.volume = 1;
-
+	
 						daNote.kill();
 						notes.remove(daNote, true);
 						daNote.destroy();
 					}
-
+	
 					if (FlxG.save.data.downscroll)
 						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
 					else
@@ -2561,7 +2554,7 @@ class PlayState extends MusicBeatState
 					//trace(daNote.y);
 					// WIP interpolation shit? Need to fix the pause issue
 					// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
-
+	
 					if (daNote.y < -daNote.height && !FlxG.save.data.downscroll || daNote.y >= strumLine.y + 106 && FlxG.save.data.downscroll)
 					{
 						if (daNote.isSustainNote && daNote.wasGoodHit)
@@ -2577,10 +2570,10 @@ class PlayState extends MusicBeatState
 							if (theFunne)
 								noteMiss(daNote.noteData);
 						}
-
+	
 						daNote.active = false;
 						daNote.visible = false;
-
+	
 						daNote.kill();
 						notes.remove(daNote, true);
 						daNote.destroy();
@@ -2741,19 +2734,19 @@ class PlayState extends MusicBeatState
 			var noteDiff:Float = Math.abs(strumtime - Conductor.songPosition);
 			// boyfriend.playAnim('hey');
 			vocals.volume = 1;
-
+	
 			var placement:String = Std.string(combo);
-
+	
 			var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
 			coolText.screenCenter();
 			coolText.x = FlxG.width * 0.55;
 			coolText.y += sjy;
-
+	
 			var rating:FlxSprite = new FlxSprite();
 			var score:Int = 350;
-
+	
 			var daRating:String = "sick";
-
+				
 			if (noteDiff > Conductor.safeZoneOffset * 2)
 				{
 					daRating = 'shit';
@@ -2845,13 +2838,13 @@ class PlayState extends MusicBeatState
 					health += 0.1;
 				sicks++;
 			}
-
+	
 			if (daRating != 'shit' || daRating != 'bad')
 				{
-
-
+	
+	
 			songScore += score;
-
+	
 			/* if (combo > 60)
 					daRating = 'sick';
 				else if (combo > 12)
@@ -2859,16 +2852,16 @@ class PlayState extends MusicBeatState
 				else if (combo > 4)
 					daRating = 'bad';
 			 */
-
+	
 			var pixelShitPart1:String = "";
 			var pixelShitPart2:String = '';
-
+	
 			if (curStage.startsWith('school'))
 			{
 				pixelShitPart1 = 'weeb/pixelUI/';
 				pixelShitPart2 = '-pixel';
 			}
-
+	
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 			rating.screenCenter();
 			rating.x = coolText.x - 40;
@@ -2877,17 +2870,17 @@ class PlayState extends MusicBeatState
 			rating.acceleration.y = 550;
 			rating.velocity.y -= FlxG.random.int(140, 175);
 			rating.velocity.x -= FlxG.random.int(0, 10);
-
+	
 			var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
 			comboSpr.screenCenter();
 			comboSpr.x = coolText.x;
 			comboSpr.acceleration.y = 600;
 			comboSpr.velocity.y -= 150;
 			comboSpr.y += sjy;
-
+	
 			comboSpr.velocity.x += FlxG.random.int(1, 10);
 			add(rating);
-
+	
 			if (!curStage.startsWith('school'))
 			{
 				rating.setGraphicSize(Std.int(rating.width * 0.7));
@@ -2900,12 +2893,12 @@ class PlayState extends MusicBeatState
 				rating.setGraphicSize(Std.int(rating.width * daPixelZoom * 0.7));
 				comboSpr.setGraphicSize(Std.int(comboSpr.width * daPixelZoom * 0.7));
 			}
-
+	
 			comboSpr.updateHitbox();
 			rating.updateHitbox();
-
+	
 			var seperatedScore:Array<Int> = [];
-
+	
 			var comboSplit:Array<String> = (combo + "").split('');
 
 			if (comboSplit.length == 2)
@@ -2916,7 +2909,7 @@ class PlayState extends MusicBeatState
 				var str:String = comboSplit[i];
 				seperatedScore.push(Std.parseInt(str));
 			}
-
+	
 			var daLoop:Int = 0;
 			for (i in seperatedScore)
 			{
@@ -2924,7 +2917,7 @@ class PlayState extends MusicBeatState
 				numScore.screenCenter();
 				numScore.x = coolText.x + (43 * daLoop) - 90;
 				numScore.y += 80;
-
+	
 				if (!curStage.startsWith('school'))
 				{
 					numScore.antialiasing = true;
@@ -2935,14 +2928,14 @@ class PlayState extends MusicBeatState
 					numScore.setGraphicSize(Std.int(numScore.width * daPixelZoom));
 				}
 				numScore.updateHitbox();
-
+	
 				numScore.acceleration.y = FlxG.random.int(200, 300);
 				numScore.velocity.y -= FlxG.random.int(140, 160);
 				numScore.velocity.x = FlxG.random.float(-5, 5);
-
+	
 				if (combo >= 10 || combo == 0)
 					add(numScore);
-
+	
 				FlxTween.tween(numScore, {alpha: 0}, 0.2, {
 					onComplete: function(tween:FlxTween)
 					{
@@ -2950,32 +2943,32 @@ class PlayState extends MusicBeatState
 					},
 					startDelay: Conductor.crochet * 0.002
 				});
-
+	
 				daLoop++;
 			}
-			/*
+			/* 
 				trace(combo);
 				trace(seperatedScore);
 			 */
-
+	
 			coolText.text = Std.string(seperatedScore);
 			// add(coolText);
-
+	
 			FlxTween.tween(rating, {alpha: 0}, 0.2, {
 				startDelay: Conductor.crochet * 0.001
 			});
-
+	
 			FlxTween.tween(comboSpr, {alpha: 0}, 0.2, {
 				onComplete: function(tween:FlxTween)
 				{
 					coolText.destroy();
 					comboSpr.destroy();
-
+	
 					rating.destroy();
 				},
 				startDelay: Conductor.crochet * 0.001
 			});
-
+	
 			curSection += 1;
 			}
 		}
@@ -2987,7 +2980,7 @@ class PlayState extends MusicBeatState
 		var upHold:Bool = false;
 		var downHold:Bool = false;
 		var rightHold:Bool = false;
-		var leftHold:Bool = false;
+		var leftHold:Bool = false;	
 
 		var l1Hold:Bool = false;
 		var uHold:Bool = false;
@@ -3096,13 +3089,13 @@ class PlayState extends MusicBeatState
 			//timeCurrently = Math.abs(rep.replay.keyPresses[repPresses].time - Conductor.songPosition);
 			//timeCurrentlyR = Math.abs(rep.replay.keyReleases[repReleases].time - Conductor.songPosition);
 
-
+			
 			if (repPresses < rep.replay.keyPresses.length && repReleases < rep.replay.keyReleases.length)
 			{
 				upP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "up";
 				rightP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "right";
 				downP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition) && rep.replay.keyPresses[repPresses].key == "down";
-				leftP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition)  && rep.replay.keyPresses[repPresses].key == "left";
+				leftP = NearlyEquals(rep.replay.keyPresses[repPresses].time, Conductor.songPosition)  && rep.replay.keyPresses[repPresses].key == "left";	
 
 				upR = NearlyEquals(rep.replay.keyReleases[repReleases].time, Conductor.songPosition) && rep.replay.keyReleases[repReleases].key == "up";
 				rightR = NearlyEquals(rep.replay.keyReleases[repReleases].time, Conductor.songPosition) && rep.replay.keyReleases[repReleases].key == "right";
@@ -3140,7 +3133,7 @@ class PlayState extends MusicBeatState
 		// FlxG.watch.addQuick('asdfa', upP);
 		var ankey = (upP || rightP || downP || leftP);
 		if (mania == 1)
-		{
+		{ 
 			ankey = (l1P || uP || r1P || l2P || dP || r2P);
 			controlArray = [l1P, uP, r1P, l2P, dP, r2P];
 		}
@@ -3153,11 +3146,11 @@ class PlayState extends MusicBeatState
 			{
 				repPresses++;
 				boyfriend.holdTimer = 0;
-
+	
 				var possibleNotes:Array<Note> = [];
-
+	
 				var ignoreList:Array<Int> = [];
-
+	
 				notes.forEachAlive(function(daNote:Note)
 				{
 					if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate)
@@ -3165,16 +3158,16 @@ class PlayState extends MusicBeatState
 						// the sorting probably doesn't need to be in here? who cares lol
 						possibleNotes.push(daNote);
 						possibleNotes.sort((a, b) -> Std.int(a.strumTime - b.strumTime));
-
+	
 						ignoreList.push(daNote.noteData);
 					}
 				});
-
-
+	
+				
 				if (possibleNotes.length > 0)
 				{
 					var daNote = possibleNotes[0];
-
+	
 					// Jump notes
 					if (possibleNotes.length >= 2)
 					{
@@ -3232,7 +3225,7 @@ class PlayState extends MusicBeatState
 						}
 					}
 					else // regular notes?
-					{
+					{	
 						if (loadRep)
 						{
 							if (NearlyEquals(daNote.strumTime,rep.replay.keyPresses[repPresses].time, 30))
@@ -3246,12 +3239,12 @@ class PlayState extends MusicBeatState
 						else
 							noteCheck(controlArray, daNote);
 					}
-					/*
+					/* 
 						if (controlArray[daNote.noteData])
 							goodNoteHit(daNote);
 					 */
 					// trace(daNote.noteData);
-					/*
+					/* 
 						switch (daNote.noteData)
 						{
 							case 2: // NOTES YOU JUST PRESSED
@@ -3280,7 +3273,7 @@ class PlayState extends MusicBeatState
 					badNoteCheck();
 				}
 			}
-
+			
 			var condition = ((up || right || down || left) && generatedMusic || (upHold || downHold || leftHold || rightHold) && loadRep && generatedMusic);
 			if (mania == 1)
 			{
@@ -3359,7 +3352,7 @@ class PlayState extends MusicBeatState
 					}
 				});
 			}
-
+	
 			if (boyfriend.holdTimer > Conductor.stepCrochet * 4 * 0.001 && !up && !down && !right && !left)
 			{
 				if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
@@ -3367,7 +3360,7 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim('idle');
 				}
 			}
-
+	
 			playerStrums.forEach(function(spr:FlxSprite)
 			{
 				if (mania == 0)
@@ -3501,7 +3494,7 @@ class PlayState extends MusicBeatState
 							if (n8R) spr.animation.play('static');
 					}
 				}
-
+				
 				if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
 				{
 					spr.centerOffsets();
@@ -3582,7 +3575,7 @@ class PlayState extends MusicBeatState
 			var n6P = controls.N6_P;
 			var n7P = controls.N7_P;
 			var n8P = controls.N8_P;
-
+			
 			if (mania == 0)
 			{
 				if (leftP)
@@ -3649,7 +3642,7 @@ class PlayState extends MusicBeatState
 		});
 		return possibleNotes.length;
 	}
-
+	
 	var mashing:Int = 0;
 	var grace:Bool = false;
 
@@ -3659,7 +3652,7 @@ class PlayState extends MusicBeatState
 			{
 				if (controlArray[note.noteData])
 					goodNoteHit(note);
-				else if (!theFunne && startedCountdown && !cs_reset)
+				else if (!theFunne && startedCountdown && !cs_reset) 
 					badNoteCheck();
 				else if (rep.replay.keyPresses.length > repPresses && !controlArray[note.noteData])
 				{
@@ -3667,7 +3660,7 @@ class PlayState extends MusicBeatState
 					{
 						goodNoteHit(note);
 					}
-					else if (!theFunne && startedCountdown && !cs_reset)
+					else if (!theFunne && startedCountdown && !cs_reset) 
 						badNoteCheck();
 				}
 			}
@@ -3705,7 +3698,7 @@ class PlayState extends MusicBeatState
 					}
 					else
 						totalNotesHit += 1;
-
+	
 					var sDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
 					if (mania == 1)
 					{
@@ -3717,7 +3710,7 @@ class PlayState extends MusicBeatState
 					}
 
 					boyfriend.playAnim('sing' + sDir[note.noteData], true);
-
+		
 					playerStrums.forEach(function(spr:FlxSprite)
 					{
 						if (Math.abs(note.noteData) == spr.ID)
@@ -3726,14 +3719,14 @@ class PlayState extends MusicBeatState
 						}
 						//spr.updateHitbox();
 					});
-
+		
 					note.wasGoodHit = true;
 					vocals.volume = 1;
-
+		
 					note.kill();
 					notes.remove(note, true);
 					note.destroy();
-
+					
 					updateAccuracy();
 
 					grace = true;
@@ -3743,7 +3736,7 @@ class PlayState extends MusicBeatState
 					});
 				}
 			}
-
+		
 
 	var fastCarCanDrive:Bool = true;
 
@@ -4451,7 +4444,7 @@ class PlayState extends MusicBeatState
 				dside = [1, 1, 1, 1, 1, 1, 1];
 			case 'gf_sass':
 				dialogue = [
-					"WHAT THE ACTUAL F-?!",
+					"BEP?!",
 					"Will that get you to sing for real\nthis time?"
 				];
 				dface = [
@@ -4462,36 +4455,28 @@ class PlayState extends MusicBeatState
 			case 'sh_amazing':
 				dialogue = [
 					"...",
-					"*panting*",
-					"Amazing!",
-					"Huh...?"
+					"Amazing!"
 				];
 				dface = [
 						"f_sh_smug",
-						"f_bf_a",
-						"f_sh_smug",
-						"f_bf_a"
+						"f_sh_smug"
 						];
-				dside = [1, -1, 1, -1];
+				dside = [1, 1];
 			case 'sh_expo':
 				dialogue = [
 					"I scared you didn't I?",
-					"Um...",
+					"bee",
 					"I don't even need a finger snap to like,\nbring every dead being in this planet\nback to life",
 					"Wouldn't have killed your dog if\nI didn't know that",
 					"...",
-					"...",
-					"Really?",
 					"Anyways, to tell you the truth Scooby\nwas looking for you.",
 					"We came to your universe because we\nheard a teenager was like, immortal",
-					"But, we couldn't seem to find them...",
-					"But you came along, you beat me first try!",
+					"And you beat me first try!",
 					"From my perspective at least...",
 					"I'm guessing you have some time resetting\nability so I'm glad I didn't go\nfull power against you.",
-					"... How much power was that again?",
+					"baap be?",
 					"0.002%",
-					"......?!",
-					"(What is this guy?)",
+					"a",
 					"Welp, we gotta go and stuff."
 				];
 				dface = [
@@ -4499,31 +4484,27 @@ class PlayState extends MusicBeatState
 						"f_bf_a",
 						"f_sh",
 						"f_gf",
-						"f_sh_ser",
-						"f_bf", "n",
-						"f_sh", "n", "f_sh_smug", "f_sh_con", "n",
+						"f_sh_ser", "f_sh", "n", "f_sh_smug", "f_sh_con", "n",
 						"f_bf",
 						"f_sh",
-						"f_bf_a", "n",
+						"f_bf_a",
 						"f_sh"
 						];
-				dside = [1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1];
+				dside = [1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1];
 			case "sh_bye":
 				dialogue = [
 					"I heard they're gathering up some powerful\nindividuals for a tournament in\na universe close by...",
 					"And if saitama's gonna be there, I can't\nmiss it.",
 					"So like, goodbye! For now at least.",
-					sh_kill_line,
-					"... GF, why did you do this?"
+					sh_kill_line
 				];
 				dface = [
 						"f_sh",
 						"f_sh_smug",
 						"f_sh",
-						"f_sh_kill",
-						"f_bf_shocked"
+						"f_sh_kill"
 				];
-				dside = [1, 1, 1, 1, -1];
+				dside = [1, 1, 1, 1];
 			case "troleo":
 				dialogue = [
 					"Chupenme la corneta giles culiaooos!!!!",
